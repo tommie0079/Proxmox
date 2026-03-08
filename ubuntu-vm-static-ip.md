@@ -1,6 +1,6 @@
 # Set a Static IP Address in an Ubuntu VM
 
-This procedure should be done inside the Ubuntu VM, not on the Proxmox host.
+Use the Proxmox console or SSH to access the Ubuntu VM, then run the commands inside the VM.
 
 ## 1. Install nano
 
