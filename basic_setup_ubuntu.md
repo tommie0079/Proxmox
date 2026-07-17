@@ -76,7 +76,7 @@ sudo systemctl restart smbd
 Create a Samba password:
 
 ```bash
-sudo smbpasswd -a nimda
+sudo smbpasswd -a userexample
 ```
 
 Enable the account:
