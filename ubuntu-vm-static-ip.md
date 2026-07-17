@@ -60,6 +60,10 @@ Update the following values to match your environment:
 sudo netplan apply
 ```
 
-## Result
+## Install ping & test
+
+```
+sudo apt install iputils-ping -y
+```
 
 The Ubuntu VM should now use the static IP address you configured.
