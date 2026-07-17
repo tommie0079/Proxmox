@@ -42,7 +42,7 @@ Create a shared folder:
 sudo mkdir -p /srv/samba/share
 ```
 
-Give your user access (use the full path and the `nimda` user/group):
+Give your user access (use the full path and the `userexample` user/group):
 
 ```bash
 sudo chown -R userexample:userexample /srv/samba/share
