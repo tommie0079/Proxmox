@@ -6,6 +6,7 @@ Use the Proxmox console or SSH to access the Ubuntu VM, then run the commands in
 
 ```bash
 sudo apt update
+sudo apt upgrade
 sudo apt install nano -y
 ```
 
