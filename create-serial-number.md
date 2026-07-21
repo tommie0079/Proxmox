@@ -1,32 +1,32 @@
-# 1. Skap serienummer og tildel den til VM-en
+# 1. Create a serial number and assign it to the VM
 
-Følg denne instruksjonen for å skape et serienummer på Proxmox og knytte det til Windows 11 VM-en.
+Follow this instruction to create a serial number on Proxmox and assign it to the Windows 11 VM.
 
-## Steg 1: Åpne Shell
+## Step 1: Open the Shell
 
-1. Gå til Proxmox under **Datacenter → PVE**.
-2. Trykk på **Shell**.
+1. Go to Proxmox under **Datacenter → PVE**.
+2. Click on **Shell**.
 
-## Steg 2: Installer uuid-runtime
+## Step 2: Install uuid-runtime
 
-Kjør følgende kommandoer i shellet:
+Run the following commands in the shell:
 
 ```bash
 apt update
 apt install uuid-runtime
 ```
 
-## Steg 3: Sett VMID
+## Step 3: Set the VMID
 
-Endre `VMID` til din Windows VM. For eksempel:
+Change `VMID` to your Windows VM. For example:
 
 ```bash
 VMID=102
 ```
 
-## Steg 4: Skap serienummer og knytt det til VM-en
+## Step 4: Create the serial number and assign it to the VM
 
-Kjør følgende kommando (bytt ut `<VMID>` med din VMID):
+Run the following command (replace `<VMID>` with your VMID):
 
 ```bash
 VMID=<VMID>; qm stop $VMID; \
@@ -39,10 +39,10 @@ echo "Serial: ${SERIAL}"; \
 qm start $VMID
 ```
 
-Kommandoen gjør følgende:
+The command does the following:
 
-- Stopper VM-en.
-- Lager en sikkerhetskopi av konfigurasjonsfila (`.conf.bak`).
-- Genererer et nytt serienummer med `uuidgen`.
-- Legger serienummeret inn i SMBIOS-innstillingene for VM-en.
-- Skriver ut serienummeret og starter VM-en igjen.
+- Stops the VM.
+- Creates a backup of the configuration file (`.conf.bak`).
+- Generates a new serial number using `uuidgen`.
+- Adds the serial number to the VM's SMBIOS settings.
+- Prints the serial number and starts the VM again.
